@@ -1,0 +1,23 @@
+{
+  "name": "ayesha_ahmed_mobwebproject_assessment2",
+  "version": "1.0.0",
+  "description": "portfolio and e-commerce site",
+  "keywords": [
+    "\"portfolio\"",
+    "\"e-commerce\"",
+    "\"database\"",
+    "\"backend\""
+  ],
+  "license": "MIT",
+  "author": "PROJECT_AYA",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.4.1",
+    "express": "^5.1.0",
+    "nedb": "^1.8.0"
+  }
+}

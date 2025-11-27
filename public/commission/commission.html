@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--stylesheet and google font ref-->
+    <link rel="stylesheet" href="../style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Bitcount Grid Single Ink' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Edu NSW ACT Foundation' rel='stylesheet'>
+    <!--paypal API ref-->
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=Aag5M4pzmV9up5fp7jZubGROukh2Qdkckqj5EjkTIraaYG8qL-XnmobCel2knz0_wLJsWlpjMQUq1jal&currency=GBP&components=buttons"></script>
+    <title>Commission Me</title>
+</head>
+
+<body>
+    <!--side nav for other pages-->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="../index.html">HOME</a>
+        <a href="../showcase/showcase.html">SHOWCASE</a>
+        <a href="../commission/commission.html">COMMISSION</a>
+        <a href="../contact/contact.html">CONTACT</a>
+        <a href="../tos/tos.html">TERMS OF SERVICE</a>
+        <a href="../faqs/faq.html">FAQ</a>
+    </div>
+    <!-- Use any element to open the sidenav -->
+    <span onclick="openNav()">
+        <div class="hamburger">
+            <div class="men"></div>
+            <div class="men"></div>
+            <div class="men"></div>
+        </div>
+    </span>
+
+    <!--page titles-->
+    <h1>PROJECT AYA</h1>
+    <h2>Commission Form</h2>
+
+    <!--form box with questions and input boxes for user-->
+    <div class="form-box">
+        <form action="/api" method="POST">
+            <label for="names">Name:</label>
+            <input type="text" id="names" name="names" required><br>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required><br>
+            <p>What service would you like to purchase? (for multiple, please email officialprojectaya@gmail.com,
+                or submit multiple requests)
+            </p>
+            <input type="radio" id="model1" name="comm" value="model1">
+            <label for="model1">3D Model - <a href="../model_3d/models.html">Asset</a></label><br>
+            <input type="radio" id="model2" name="comm" value="model2">
+            <label for="model2">3D Model - <a href="../model_3d/models.html">Environment</a></label><br>
+            <input type="radio" id="website" name="comm" value="website">
+            <label for="website"><a href="../website_show/website.html">Website</a></label><br>
+            <input type="radio" id="art1" name="comm" value="art1">
+            <label for="art1">Generative Art - <a href="../genart/genart.html">Still</a></label><br>
+            <input type="radio" id="art2" name="comm" value="art2">
+            <label for="art2">Generative Art - <a href="../genart/genart.html">Dynamic</a></label><br>
+            <input type="radio" id="photo1" name="comm" value="photo1">
+            <label for="photo1">Photography - <a href="../photographs/photography.html">Nature</a></label><br>
+            <input type="radio" id="photo2" name="comm" value="photo2">
+            <label for="photo2">Photography - <a href="../photographs/photography.html">Architecture</a></label><br>
+
+            <p>List as much detail as possible about your commission (inspiration, links, etc.)</p>
+            <textarea name="details" id="details" rows="10" cols="30"></textarea>
+            <br>
+
+            <input type="checkbox" id="tos" name="tos" value="tos" required>
+            <label for="tos"> I have read and agree to the <a href="../tos/tos.html">Terms and Conditions</a></label>
+            <br>
+            <input type="checkbox" id="price" name="price" value="price" required>
+            <label for="price"> I understand that I am paying for the BASE PRICE ONLY and will be contacted via email
+                to pay for the remaining amount.</a></label>
+            <br>
+            <h4>Total: <span id="totalDisplay">£0</span></h4>
+            <div id="button_for_pay">
+                <div id="paypal-button"></div>
+            </div>
+        </form>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br> <!--avoid footer overlap-->
+
+    <!--footer-->
+    <footer>
+        <div class="content">
+            <p>Email: officialprojectaya@gmail.com</p>
+            <p>© 2025 PROJECT_AYA</p>
+        </div>
+    </footer>
+
+    <script>
+        //prices for the items
+        const prices = {
+            model1: 1, //3d asset
+            model2: 40, //3d environment
+            website: 40, //website
+            art1: 1, //genart still
+            art2: 20, //genart dynamic
+            photo1: 100, //photo nature
+            photo2: 90 //photo nature
+        };
+        let totalPrice = 0;
+
+        //update the total display
+        function updateTotal() {
+            const selectedRadio = document.querySelector('input[name="comm"]:checked');
+            if (selectedRadio) {
+                totalPrice = prices[selectedRadio.value] || 0;
+            } else {
+                totalPrice = 0;
+            }
+            document.getElementById("totalDisplay").textContent = "£" + totalPrice;
+        }
+
+        //event listener for the radio buttons to see if clicked
+        document.addEventListener("DOMContentLoaded", function () {
+            const radios = document.querySelectorAll('input[name="comm"]');
+            radios.forEach(radio => {
+                radio.addEventListener('change', updateTotal);
+            });
+        });
+
+        // Render PayPal button
+        paypal.Buttons({
+
+            createOrder: function (data, actions) {
+                if (totalPrice === 0) {
+                    alert("Please select a service.");
+                    return;
+                }
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: totalPrice.toString()
+                        }
+                    }]
+                });
+            },
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (details) {
+                    alert('Payment completed! Transaction ID: ' + details.id);
+                    // Now submit the commission data
+                    submitCommission();
+                });
+            },
+            onError: function (err) {
+                console.error('PayPal error:', err);
+                alert('Payment failed. Please try again.');
+            }
+        }).render('#paypal-button'); //render the paypal button to the screen
+
+        //post commission details
+        async function submitCommission() {
+            const input1 = document.getElementById('names');
+            const input2 = document.getElementById('email');
+            const input3 = document.querySelector('input[name="comm"]:checked');
+            const input4 = document.getElementById('details');
+            const name = input1.value;
+            const email = input2.value;
+            const comm = input3 ? input3.value : '';
+            const detail = input4.value;
+            const data = { name, email, comm, detail };
+            console.log(data);
+            const options = {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            };
+
+            try {
+                const response = await fetch("/api", options);
+                const json = await response.json();
+                console.log(json);
+                //error checking to see if completed sucessfully
+                if (json.status === "success") {
+                    alert("Commission submitted successfully!");
+                } else {
+                    alert("Error submitting commission.");
+                }
+            } catch (err) {
+                console.error('Error:', err);
+                alert("Error submitting commission.");
+            }
+        }
+
+        //open/close nav
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        //confirm message
+        function confirmComm() {
+            confirm("Thanks for your commission!");
+        }
+
+    </script>
+</body>
+
+</html>

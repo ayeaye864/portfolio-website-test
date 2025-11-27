@@ -1,0 +1,537 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*universal selector - default to 0*/
+
+/*links are pink*/
+a {
+  color: #b94687;
+}
+
+/*light pink link on hover*/
+a:hover {
+  color: #dbb2c9;
+}
+
+/*special link is light pink*/
+.special {
+  color: #b94687;
+}
+
+/*change format of side navigation when on a smaller screen*/
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0;
+  color: #dbb2c9;
+  transition: 0.3s;
+  margin: 40px;
+  padding-bottom: 10px;
+  width: 25rem;
+  height: 25rem;
+}
+
+.card-img-top {
+  /*image format for card on Showcase page*/
+  width: auto;
+  height: 50%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.card-img-top2 {
+  /*exceptional circumstance for 1 image on card*/
+  width: 70%;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0;
+  color: #b94687;
+  ;
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 60px;
+}
+
+.mySlides1,
+.mySlides2 {
+  /*default slidehsow*/
+  display: none
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover,
+.next:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+/*side navigation main details and formatting - take up whole page and bg is pink*/
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #dbb2c9;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align: center;
+}
+
+/*links on the side nav*/
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 60px;
+  color: #4a4a4a;
+  display: block;
+  transition: 0.3s;
+}
+
+/*links chnage colour on side nav*/
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/*close navigation button on the top right when open*/
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/*side nav button container is on top left and remains there even when the page scrolls down*/
+.hamburger {
+  position: sticky;
+  top: 10px;
+}
+
+/*3 smaller div buttons to make hamburger icon*/
+.men {
+  width: 35px;
+  height: 5px;
+  background-color: #b94687;
+  margin: 8px;
+  margin-left: 20px;
+}
+
+/*main font and colour with conteingency fonts in case 1st choise isn't supported*/
+body {
+  font-size: 26px;
+  background-color: #f5e9e9;
+  font-family: 'Edu NSW ACT Foundation',
+    Georgia, 'Times New Roman', Times, serif;
+  color: #4a4a4a;
+}
+
+h1 {
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #b94687;
+  font-size: 60px;
+  font-family: 'Bitcount Grid Single Ink', Georgia, 'Times New Roman', Times, serif;
+  /*main title with contingency font if not supported*/
+}
+
+h2 {
+  text-decoration: underline;
+  text-align: center;
+  margin: 1em;
+  font-size: 40px;
+  /*subtitle*/
+}
+
+
+h3 {
+  text-decoration: underline;
+  text-align: center;
+  margin: 0em;
+  margin-bottom: 2em;
+  font-size: 30px;
+  /*sub-subtitle*/
+}
+
+.projects {
+  text-align: left;
+  padding: 0;
+  margin: 1em;
+}
+
+h4 {
+  text-align: left;
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+  margin: 2em;
+}
+
+h5 {
+  font-size: 25px;
+}
+
+table {
+  text-align: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*create a grid so text is on the left, image on the right on homepage*/
+.homepage {
+  display: grid;
+  grid-template-areas: "home_txt home_img";
+  grid-template-columns: 2.5fr 1.5fr;
+  gap: 3px;
+  padding: 5px;
+}
+
+.container div {
+  padding: 10px;
+}
+
+.container div.home_txt {
+  grid-area: home_txt;
+}
+
+.container div.home_img {
+  grid-area: home_img;
+}
+
+.special_h2 {
+  text-align: left;
+  font-size: 30px;
+}
+
+
+button {
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  /*submit button*/
+}
+
+.purchasing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*button on each shocase page to link to form*/
+}
+
+p,
+label {
+  padding-left: 1.5em;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  /*main text*/
+}
+
+.socials {
+  float: none;
+  width: 100%;
+  /*social media icons*/
+}
+
+.header {
+  float: left;
+  width: 25%;
+}
+
+/* Clearfix (clear floats) */
+.socials::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding: 20px;
+}
+
+footer {
+  background-color: #dbb2c9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+  padding: 10px;
+  padding-bottom: 20px;
+  text-align: center;
+  /* footer settings*/
+}
+
+.content {
+  color: #4a4a4a;
+  /*text in footer*/
+}
+
+.caption {
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 2em;
+  /*chart caption + sos button caption*/
+}
+
+ul.a {
+  margin-top: 20px;
+
+}
+
+ul.b {
+  list-style-type: circle;
+  margin: 0;
+  padding: 0;
+}
+
+
+li {
+  list-style-type: circle;
+  margin-left: 3em;
+  padding-bottom: 30px;
+}
+
+.form-box {
+  /*outline the form for commission*/
+  padding: 5px;
+  margin: 20px;
+  border: 2px solid;
+}
+
+/*boxes for user input formatting*/
+.form-box p {
+  padding-left: 0.5em;
+}
+
+.form-box input[type="radio"] {
+  margin-left: 2em;
+}
+
+.form-box input[type="checkbox"] {
+  margin-left: 2em;
+}
+
+.form-box textarea {
+  margin-left: 2em;
+}
+
+#button_for_pay {
+  display: flex;
+  justify-content: center;
+  /*div for paypal button*/
+}
+
+#paypal-button {
+  text-align: center;
+  z-index: 0;
+  width: 500px;
+  /*paypal button setting for commission page - z-index smaller than rest so it doesn't appear on top of nav*/
+}
+
+/*move content to middle of page*/
+.middle_page {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+
+}
+
+/*responsive design to fit content to smaller screen*/
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  body {
+    font-size: 18px;
+  }
+
+  .sidenav a {
+    font-size: 40px;
+  }
+
+  .socials {
+    float: none;
+    width: 100%;
+  }
+
+  .header {
+    float: left;
+    width: 25%;
+  }
+
+  .card {
+    margin: 5px auto;
+  }
+
+  .center {
+    width: 95%;
+  }
+
+  .form-box input[type="text"],
+  .form-box textarea {
+    width: 95%;
+  }
+
+  .slideshow-container {
+    max-width: 95%;
+  }
+
+  .middle_page {
+    width: fit-content;
+  }
+
+  a.ul {
+    font-size: 15px;
+  }
+}
+
+/*responsive design to fit content to medium screen*/
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 35px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  body {
+    font-size: 20px;
+  }
+
+  .sidenav a {
+    font-size: 50px;
+  }
+
+  .socials {
+    float: none;
+    width: 100%;
+  }
+
+  .header {
+    float: left;
+    width: 25%;
+  }
+
+  .card {
+    width: 100%;
+    margin: 10px auto 20px auto;
+  }
+
+  .center {
+    width: 90%;
+  }
+
+  p,
+  label {
+    padding-left: 1em;
+  }
+
+  .form-box input[type="text"],
+  .form-box textarea {
+    width: 90%;
+  }
+
+  footer {
+    padding-bottom: 30px;
+  }
+
+  .slideshow-container {
+    max-width: 90%;
+  }
+
+  table {
+    display: block;
+  }
+
+  td {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  .card {
+    text-align: center;
+  }
+
+  .middle_page {
+    width: fit-content;
+  }
+
+  a.ul {
+    font-size: 15px;
+  }
+}

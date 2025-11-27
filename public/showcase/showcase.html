@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--stylesheet and google font ref-->
+  <link rel="stylesheet" href="../style.css" />
+  <link href='https://fonts.googleapis.com/css?family=Bitcount Grid Single Ink' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Edu NSW ACT Foundation' rel='stylesheet'>
+  <title>Showcase</title>
+</head>
+
+<body>
+  <!--side nav with links to other pages-->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="../index.html">HOME</a>
+    <a href="../showcase/showcase.html">SHOWCASE</a>
+    <a href="../commission/commission.html">COMMISSION</a>
+    <a href="../contact/contact.html">CONTACT</a>
+    <a href="../tos/tos.html">TERMS OF SERVICE</a>
+    <a href="../faqs/faq.html">FAQ</a>
+  </div>
+  <!-- Use any element to open the sidenav -->
+  <span onclick="openNav()">
+    <div class="hamburger">
+      <div class="men"></div>
+      <div class="men"></div>
+      <div class="men"></div>
+    </div>
+  </span>
+
+  <!--page titles-->
+  <h1>PROJECT AYA</h1>
+  <h2>Showcase</h2>
+
+  <!--4 card icons with links to types of work + image-->
+  <table> <!--creates a table-->
+    <tr><!--creates a row-->
+      <td>
+        <div class="card">
+          <img class="card-img-top" src="../model_3d/house.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">3D Models</h5>
+            <a href="../model_3d/models.html" class="btn btn-primary">Explore</a>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="card">
+          <img class="card-img-top" src="../website_show/thumbnail.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Websites</h5>
+            <a href="../website_show/website.html" class="btn btn-primary">Explore</a>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="card">
+          <img class="card-img-top" src="../genart/still1.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Generative Art</h5>
+            <a href="../genart/genart.html" class="btn btn-primary">Explore</a>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="card">
+          <img class="card-img-top" src="../photographs/bridge.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Photography and Media</h5>
+            <a href="../photographs/photography.html" class="btn btn-primary">Explore</a>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br> <!--avoid footer overlap-->
+
+  <!--footer-->
+  <footer>
+    <div class="content">
+      <p>Email: officialprojectaya@gmail.com</p>
+      <p>© 2025 PROJECT_AYA</p>
+    </div>
+  </footer>
+
+  <script>
+    //open/close nav
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "100%";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
+</body>
+
+</html>
