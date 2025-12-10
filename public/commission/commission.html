@@ -18,7 +18,7 @@
     <!--side nav for other pages-->
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="../index.html">HOME</a>
+        <a href="../../index.html">HOME</a>
         <a href="../showcase/showcase.html">SHOWCASE</a>
         <a href="../commission/commission.html">COMMISSION</a>
         <a href="../contact/contact.html">CONTACT</a>
@@ -77,6 +77,9 @@
             <h4>Total: <span id="totalDisplay">£0</span></h4>
             <div id="button_for_pay">
                 <div id="paypal-button"></div>
+            </div>
+            <div id="button_for_pay">
+                <button onclick=submitCommission()>Submit (without payment)</button>
             </div>
         </form>
     </div>
@@ -142,7 +145,7 @@
                 return actions.order.capture().then(function (details) {
                     alert('Payment completed! Transaction ID: ' + details.id);
                     // Now submit the commission data
-                    submitCommission();
+                    // submitCommission();
                 });
             },
             onError: function (err) {

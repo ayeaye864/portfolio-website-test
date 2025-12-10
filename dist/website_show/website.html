@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--font and stylesheet for website ref-->
+  <link rel="stylesheet" href="../style.css" />
+  <link href='https://fonts.googleapis.com/css?family=Bitcount Grid Single Ink' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Edu NSW ACT Foundation' rel='stylesheet'>
+  <title>3D Models</title>
+</head>
+
+<body>
+  <!--side nav to other pages on websitee-->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="../index.html">HOME</a>
+    <a href="../showcase/showcase.html">SHOWCASE</a>
+    <a href="../commission/commission.html">COMMISSION</a>
+    <a href="../contact/contact.html">CONTACT</a>
+    <a href="../tos/tos.html">TERMS OF SERVICE</a>
+    <a href="../faqs/faq.html">FAQ</a>
+  </div>
+  <!-- Use any element to open the sidenav --> <span onclick="openNav()">
+    <div class="hamburger">
+      <div class="men"></div>
+      <div class="men"></div>
+      <div class="men"></div>
+    </div>
+  </span>
+
+  <!--page titles-->
+  <h1>PROJECT AYA</h1>
+  <h2>Websites</h2>
+
+  <h3 class="projects">Website</h3>
+  <!-- Slideshow container with videos of website examples -->
+  <div class="slideshow-container">
+    <div class="mySlides1">
+      <video src="travel.mp4" width="100%" controls></video>
+    </div>
+
+    <div class="mySlides1">
+      <video src="cathedral.mp4" width="100%" controls></video>
+    </div>
+
+    <div class="mySlides1">
+      <video src="study.mp4" width="100%" controls></video>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+  </div>
+  <p>Want to host your works or ideas on one site? We got you covered!
+    Whether you want a simple website or a dynamic one with fluidity and movement, we can
+    make it for you.</p>
+  <p>Note: this package comes with <strong class="special">4 pages</strong> (home/contact/2 content pages). Further
+    pages have
+    an additional £5 surcharge.</p>
+  <p>Standard base price: £40 GBP </p>
+  <div class="purchasing">
+    <button><a href="../commission/commission.html">Purchase Here</a></button> <!--button to link to commission form-->
+  </div>
+  <p>(Complex designs will increase the pricing.
+    You will be contacted for price revisions after the commission has been reviewed.) </p>
+
+  <br><br><br><br><br><br><br><br> <!--avoids fotter overlap-->
+
+
+  <!--footer-->
+  <footer>
+    <div class="content">
+      <p>Email: officialprojectaya@gmail.com</p>
+      <p>© 2025 PROJECT_AYA</p>
+    </div>
+  </footer>
+
+  <script>
+    //open/close navigation script
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "100%";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+
+    //for 2 slideshows on a page
+    let slideIndex = [1, 1];
+    let slideId = ["mySlides1", "mySlides2"]
+    showSlides(1, 0);
+    showSlides(1, 1);
+
+    function plusSlides(n, no) {
+      showSlides(slideIndex[no] += n, no);
+    }
+
+    function showSlides(n, no) {
+      let i;
+      let x = document.getElementsByClassName(slideId[no]);
+      if (n > x.length) { slideIndex[no] = 1 }
+      if (n < 1) { slideIndex[no] = x.length }
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      x[slideIndex[no] - 1].style.display = "block";
+    }
+
+  </script>
+</body>
+
+</html>

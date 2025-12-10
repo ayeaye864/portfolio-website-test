@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--stylesheet link and google font ref-->
+  <link rel="stylesheet" href="../style.css" />
+  <link href='https://fonts.googleapis.com/css?family=Bitcount Grid Single Ink' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Edu NSW ACT Foundation' rel='stylesheet'>
+  <title>Generative Art</title>
+</head>
+
+<body>
+  <!--navigation-->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="../index.html">HOME</a>
+    <a href="../showcase/showcase.html">SHOWCASE</a>
+    <a href="../commission/commission.html">COMMISSION</a>
+    <a href="../contact/contact.html">CONTACT</a>
+    <a href="../tos/tos.html">TERMS OF SERVICE</a>
+    <a href="../faqs/faq.html">FAQ</a>
+  </div>
+  <!-- Use any element to open the sidenav --> <span onclick="openNav()">
+    <div class="hamburger">
+      <div class="men"></div>
+      <div class="men"></div>
+      <div class="men"></div>
+    </div>
+  </span>
+
+  <!--page title-->
+  <h1>PROJECT AYA</h1>
+  <h2>Generative Art</h2>
+
+  <h3 class="projects">Type 1: Still Piece</h3>
+  <!-- Slideshow container 1 with side buttons -->
+  <div class="slideshow-container">
+    <div class="mySlides1">
+      <img src="tenprint.png" style="width:100%">
+    </div>
+    <div class="mySlides1">
+      <img src="still1.png" style="width:100%">
+    </div>
+    <div class="mySlides1">
+      <img src="night.png" style="width:100%">
+    </div>
+    <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+  </div>
+
+  <p>Want a stunning digital art piece to own? Purchase a Still Piece created from
+    code in either Processing or p5.js (your choice!) - <strong class="special">no AI</strong> and you own the rights.
+  </p>
+  <p>Standard base price: <strong class="special">£10 GBP </strong></p>
+  <div class="purchasing">
+    <button><a href="../commission/commission.html">Purchase Here</a></button> <!--link to commission page-->
+  </div>
+  <p>(Complex designs will increase the pricing.
+    You will be contacted for price revisions after the commission has been reviewed.) </p>
+  <br>
+
+
+  <h3 class="projects">Type 2: Dynamic Piece</h3>
+  <div class="slideshow-container">
+    <div class="mySlides2">
+      <video src="fader.mp4" width="100%" controls></video>
+    </div>
+    <div class="mySlides2">
+      <video src="watercolour.mp4" width="100%" controls></video>
+    </div>
+    <div class="mySlides2">
+      <video src="bubble.mp4" width="100%" controls></video>
+    </div>
+    <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+  </div>
+  <br>
+
+  <p>Want a moving digital art piece? From audio-visuals to interactivity, we've got your interests covered!
+    Base price does not include providing audio.
+  </p>
+  <p>Standard base price:<strong class="special">£20 GBP </strong> </p>
+  <div class="purchasing">
+    <button><a href="../commission/commission.html">Purchase Here</a></button>
+  </div>
+  <p>(Complex designs will increase the pricing.
+    You will be contacted for price revisions after the commission has been reviewed.) </p>
+  </div>
+  <br><br><br><br><br><br><br><br><!--so footer doesn't overlap content-->
+
+  <!--footer-->
+  <footer>
+    <div class="content">
+      <p>Email: officialprojectaya@gmail.com</p>
+      <p>© 2025 PROJECT_AYA</p>
+    </div>
+  </footer>
+
+  <script>
+    //display multiple slideshows on a page
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "100%";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    let slideIndex = [1, 1];
+    let slideId = ["mySlides1", "mySlides2"]
+    showSlides(1, 0);
+    showSlides(1, 1);
+
+    function plusSlides(n, no) {
+      showSlides(slideIndex[no] += n, no);
+    }
+
+    function showSlides(n, no) {
+      let i;
+      let x = document.getElementsByClassName(slideId[no]);
+      if (n > x.length) { slideIndex[no] = 1 }
+      if (n < 1) { slideIndex[no] = x.length }
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      x[slideIndex[no] - 1].style.display = "block";
+    }
+  </script>
+</body>
+</html>

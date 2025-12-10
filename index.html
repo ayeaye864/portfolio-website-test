@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--stylesheet and google font ref-->
+  <link rel="stylesheet" href="public/style.css"/>
+  <link href='https://fonts.googleapis.com/css?family=Bitcount Grid Single Ink' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Edu NSW ACT Foundation' rel='stylesheet'>
+  <title>Homepage</title>
+</head>
+
+<body>
+  <!--side navigation-->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">HOME</a>
+    <a href="public/showcase/showcase.html">SHOWCASE</a>
+    <a href="public/commission/commission.html">COMMISSION</a>
+    <a href="public/contact/contact.html">CONTACT</a>
+    <a href="public/tos/tos.html">TERMS OF SERVICE</a>
+    <a href="public/faqs/faq.html">FAQ</a>
+  </div>
+  <!-- Use any element to open the sidenav -->
+  <span onclick="openNav()">
+    <div class="hamburger">
+      <div class="men"></div>
+      <div class="men"></div>
+      <div class="men"></div>
+    </div>
+  </span>
+
+  <h1>PROJECT AYA</h1>
+  <h3>
+    Freelance UX designer, website building, basic 3D modelling and more!
+  </h3>
+  <!--social media icons-->
+  <div class="socials">
+    <div class="header"><a href="https://instagram.com/project_aya_"><img id="sm-icon" src="public/ig-modified.png" style="width:25%"></a>
+    </div>
+    <div class="header"><a href="https://x.com/project_aya_"><img id="sm-icon" src="public/twt-modified.png" style="width:25%"></a></div>
+    <div class="header"><a href="https://bsky.app/profile/project-aya.bsky.social"><img id="sm-icon" src="public/bsky-modified.png" style="width:25%"></a></div>
+    <div class="header"><a href="https://youtube.com/@project_aya"><img id="sm-icon" src="public/yt-modified.png" style="width:25%"></a></div>
+  </div>
+
+
+  <h2>
+    <strong><u>About</u></strong>
+  </h2>
+  <!--homepage text with text on left and image on the right-->
+  <div class="homepage">
+    <div class="home_txt">
+      <p>
+        <strong class="special">PROJECT AYA</strong> is a freelance coder who specialises in
+        website building, UX design and research. Her other works include 3D
+        modelling and creating game experiences in Unreal Engine as well as
+        generative art through algorithms.
+      </p>
+      <p>
+        As a hobby, she indulges in photography of her surroundings and creating videos of her
+        experiences. She can also be found creating stories and interactive fiction. Her works focus on encapsulating
+        her creative mind and inspiring growth and ambition.
+      </p>
+      <h2 class="special_h2">
+        <strong><u>Ongoing Work</u></strong>
+      </h2>
+      <p>PROJECT AYA is currently working on:</p>
+      <ul class="b">
+        <li>Learning Touch Designer for interactive visuals.</li>
+        <li>Creating logos for online personas.</li>
+        <li>Creating interactive Twine stories.</li>
+      </ul>
+    </div>
+    <div class="home_img">
+      <img src="public/icon.png" style="width:70%" alt="profile icon" class="center">
+    </div>
+  </div>
+  <br><br><br><br><br><br>
+  
+<!--footer-->
+  <footer>
+    <div class="content">
+      <p>Email: officialprojectaya@gmail.com</p>
+      <p>© 2025 PROJECT_AYA</p>
+    </div>
+  </footer>
+
+  <!--open and close navigation-->
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "100%";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
+</body>
+
+</html>
